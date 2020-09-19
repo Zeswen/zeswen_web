@@ -13,12 +13,14 @@ class Home extends StatelessWidget {
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        AutoSizeText(
-          Texts.homeTitle1,
-          style: Theme.of(context).textTheme.headline1,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-        ),
+        FittedBox(
+            fit: BoxFit.fitWidth,
+            child: AutoSizeText(
+              Texts.homeTitle1,
+              style: Theme.of(context).textTheme.headline1,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+            )),
         const Divider(),
         AutoSizeText(
           Texts.homeSubtitle1,

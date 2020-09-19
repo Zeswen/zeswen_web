@@ -1,7 +1,7 @@
 class Texts {
   const Texts._();
 
-  static const String homeTitle1 = 'Welcome to Zeswen\'s temple.';
+  static const String homeTitle1 = 'Welcome to\nZeswen\'s temple.';
   static const String homeSubtitle1 =
       'I am a full-stack engineer working on multiple languages such as Dart, TypeScript and GraphQL.\n';
   static const String homeSubtitle2 =
