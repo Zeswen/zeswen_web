@@ -21,31 +21,33 @@ class About extends StatelessWidget {
         drawer: const StackDrawer(),
         endDrawer: const ProjectsDrawer(),
         body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AutoSizeText(
-              Texts.aboutTitle1,
-              style: Theme.of(context).textTheme.headline2,
-              textAlign: TextAlign.center,
-            ),
-            const Divider(),
-            FractionallySizedBox(
-                widthFactor: 1,
-                child: Row(
+            child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Flexible(
-                        child: _listTile(Texts.aboutTileTitle1,
-                            Texts.aboutTileSubtitle1, true)),
-                    Flexible(
-                        child: _listTile(Texts.aboutTileTitle2,
-                            Texts.aboutTileSubtitle2, false)),
+                    AutoSizeText(
+                      Texts.aboutTitle1,
+                      style: Theme.of(context).textTheme.headline2,
+                      textAlign: TextAlign.center,
+                    ),
+                    const Divider(),
+                    FractionallySizedBox(
+                        widthFactor: 1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Flexible(
+                                child: _listTile(Texts.aboutTileTitle1,
+                                    Texts.aboutTileSubtitle1, true)),
+                            Flexible(
+                                child: _listTile(Texts.aboutTileTitle2,
+                                    Texts.aboutTileSubtitle2, false)),
+                          ],
+                        )),
                   ],
-                )),
-          ],
-        )));
+                ))));
   }
 
   Widget _listTile(String title, String subtitle, bool primary) {

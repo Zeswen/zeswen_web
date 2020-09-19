@@ -12,47 +12,57 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AutoSizeText(
-          Texts.contactTitle1,
-          style: Theme.of(context).textTheme.headline2,
-          textAlign: TextAlign.center,
-        ),
-        const Divider(),
-        FractionallySizedBox(
-            widthFactor: 1,
-            child: Row(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
               children: [
-                Flexible(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _listTile(Texts.contactTileTitle1,
-                        Texts.contactTileSubtitle1, Texts.contactTileURL1),
-                    _listTile(Texts.contactTileTitle2,
-                        Texts.contactTileSubtitle2, Texts.contactTileURL2),
-                  ],
-                )),
-                Flexible(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _listTile(Texts.contactTileTitle3,
-                        Texts.contactTileSubtitle3, Texts.contactTileURL3),
-                    _listTile(Texts.contactTileTitle4,
-                        Texts.contactTileSubtitle4, Texts.contactTileURL4),
-                  ],
-                ))
+                AutoSizeText(
+                  Texts.contactTitle1,
+                  style: Theme.of(context).textTheme.headline2,
+                  textAlign: TextAlign.center,
+                ),
+                const Divider(),
+                FractionallySizedBox(
+                    widthFactor: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Flexible(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            _listTile(
+                                Texts.contactTileTitle1,
+                                Texts.contactTileSubtitle1,
+                                Texts.contactTileURL1),
+                            _listTile(
+                                Texts.contactTileTitle2,
+                                Texts.contactTileSubtitle2,
+                                Texts.contactTileURL2),
+                          ],
+                        )),
+                        Flexible(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            _listTile(
+                                Texts.contactTileTitle3,
+                                Texts.contactTileSubtitle3,
+                                Texts.contactTileURL3),
+                            _listTile(
+                                Texts.contactTileTitle4,
+                                Texts.contactTileSubtitle4,
+                                Texts.contactTileURL4),
+                          ],
+                        ))
+                      ],
+                    ))
               ],
-            ))
-      ],
-    ));
+            )));
   }
 
   Future<void> _launchUrl(String url) async {

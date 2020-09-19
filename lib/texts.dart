@@ -32,7 +32,7 @@ class Texts {
 
   static const String stackDrawerTitle1 = 'Stack.';
   static const String stackDrawerSubtitle1 =
-      'I will be rating my skills on every language from Semi-professional, to Professional, to Master, each one meaning:';
+      'I will be rating my skills on every language from Semi-professional, to Professional, to Master.';
   static const String stackDrawerDescriptionTitle1 = 'Semi-professional';
   static const String stackDrawerDescriptionSubtitle1 =
       'Learned, experimented and used with efficiency.';
