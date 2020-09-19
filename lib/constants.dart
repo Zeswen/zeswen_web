@@ -1,1 +1,1 @@
-const title = 'Zeswen';
+const title = 'Zeswen\'s temple.';

@@ -19,6 +19,7 @@ class Home extends StatelessWidget {
           textAlign: TextAlign.center,
           maxLines: 2,
         ),
+        const Divider(),
         AutoSizeText(
           Texts.homeSubtitle1,
           style: Theme.of(context).textTheme.subtitle1,

@@ -19,7 +19,6 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: title,
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -40,20 +39,20 @@ class Root extends StatelessWidget {
         length: 3,
         initialIndex: 1,
         child: Scaffold(
-            appBar: _appBar,
-            body: const TabBarView(
+            appBar: _appBar(context),
+            body: TabBarView(
               children: [
                 About(),
-                Home(),
-                Contact(),
+                const Home(),
+                const Contact(),
               ],
             ),
             bottomNavigationBar: _tabBar));
   }
 
-  Widget get _appBar {
+  Widget _appBar(BuildContext context) {
     return AppBar(
-      title: SizedBox(height: kToolbarHeight, child: Images.logo),
+      title: SizedBox(height: kToolbarHeight, child: Images.logo(context)),
       centerTitle: true,
     );
   }
