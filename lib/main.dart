@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
+
 import './pages/about.dart';
 import './pages/home.dart';
 import './pages/contact.dart';
@@ -13,7 +16,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  const App({Key key}) : super(key: key);
+  App({Key key}) : super(key: key);
+  final FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +29,9 @@ class App extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       home: const Root(),
+      navigatorObservers: [
+        FirebaseAnalyticsObserver(analytics: analytics),
+      ],
       onGenerateRoute: RouteConfiguration.onGenerateRoute,
     );
   }
