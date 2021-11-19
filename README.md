@@ -1,3 +1,3 @@
 # Zeswen's temple
 
-My personal temple where all my information is listed.
+My own website with all the details of my career.
