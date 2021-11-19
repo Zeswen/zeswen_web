@@ -20,7 +20,7 @@ class Texts {
   static const String contactTileTitle4 = 'CV.';
   static const String contactTileSubtitle4 = 'Zeswen';
   static const String contactTileURL4 =
-      'https://drive.google.com/file/d/1I3COM373Z8g8LzL57gmwLLa_RA1mvJHp/view?usp=sharing';
+      'https://drive.google.com/file/d/1TSL5QdnJqsMs6akK49ULiBEgeQKPVMSz/view?usp=sharing';
 
   static const String aboutTitle1 = 'About me.';
   static const String aboutTileTitle1 = 'Stack.';

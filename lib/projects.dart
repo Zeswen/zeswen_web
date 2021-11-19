@@ -11,11 +11,13 @@ class Project {
 const projects = [
   Project(
       'WordList',
-      'Technical Lead Engineer | 2019 - Present',
-      'Outstanding company where I am developing a great revolutionary application to learn new languages in web, Android, iOS and multiple platforms',
+      'Head of Engineering | 2019 - Present',
+      'An outstanding company where I am developing a revolutionary global dictionary and an innovative application to learn new languages in web, Android, iOS and multiple platforms. I started here as a Senior Full-stack Developer and made my way up to Head of Engineering in 2020.',
       [
         'Flutter',
-        'Next.js',
+        'BLoC',
+        'Firebase',
+        'Next.js (Lots of SEO)',
         'React',
         'Redux',
         'GraphQL',

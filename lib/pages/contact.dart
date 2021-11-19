@@ -7,7 +7,7 @@ import '../widgets/app_list_tile.dart';
 import '../texts.dart';
 
 class Contact extends StatelessWidget {
-  const Contact({Key key}) : super(key: key);
+  const Contact({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

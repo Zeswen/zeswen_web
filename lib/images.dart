@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Images {
   const Images._();
 
-  static String _getAsset(BuildContext context, String path) {
+  static String _asset(BuildContext context, String path) {
     final theme =
         Theme.of(context).brightness == Brightness.light ? 'light' : 'dark';
 
@@ -11,7 +11,7 @@ class Images {
   }
 
   static Image logo(BuildContext context) => Image.asset(
-        _getAsset(context, 'logo.png'),
+        _asset(context, 'logo.png'),
         fit: BoxFit.contain,
       );
 }

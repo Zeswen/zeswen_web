@@ -6,7 +6,7 @@ import '../technologies.dart';
 import './technologies.dart';
 
 class Stack extends StatelessWidget {
-  const Stack({Key key}) : super(key: key);
+  const Stack({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +43,6 @@ class Stack extends StatelessWidget {
     );
   }
 
-  Widget _transitionBuilder(BuildContext context, Animation<double> animation,
-      Animation<double> anotherAnimation, child) {
-    animation = CurvedAnimation(curve: Curves.easeInOut, parent: animation);
-    return Align(
-        child: SlideTransition(
-      position: Tween(begin: Offset(1.0, 0.0), end: Offset(0.0, 0.0))
-          .animate(animation),
-      child: child,
-    ));
-  }
-
   Widget _card(BuildContext context, String title, String subtitle,
       String route, Skill skill) {
     return Card(
@@ -64,13 +53,13 @@ class Stack extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyText1),
             subtitle: AutoSizeText(subtitle,
                 style: Theme.of(context).textTheme.bodyText2),
-            trailing: Icon(Icons.arrow_forward_ios),
+            trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               Navigator.of(context).push(PageRouteBuilder(
                 pageBuilder: (context, animation, anotherAnimation) {
                   return Technologies(skill);
                 },
-                transitionDuration: Duration(milliseconds: 250),
+                transitionDuration: const Duration(milliseconds: 250),
                 transitionsBuilder: _transitionBuilder,
               ));
             },
@@ -78,5 +67,19 @@ class Stack extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _transitionBuilder(BuildContext context, Animation<double> animation,
+      Animation<double> anotherAnimation, child) {
+    animation = CurvedAnimation(curve: Curves.easeInOut, parent: animation);
+    return Align(
+        child: SlideTransition(
+      position:
+          Tween(begin: const Offset(-1.0, 0.0), end: const Offset(0.0, 0.0))
+              .animate(animation),
+      child: Opacity(
+          opacity: Tween(begin: 0.0, end: 1.0).animate(animation).value,
+          child: child),
+    ));
   }
 }

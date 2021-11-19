@@ -5,7 +5,7 @@ import '../projects.dart';
 import '../texts.dart';
 
 class ProjectsDrawer extends StatelessWidget {
-  const ProjectsDrawer({Key key}) : super(key: key);
+  const ProjectsDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class ProjectsDrawer extends StatelessWidget {
                           horizontal: 12, vertical: 8),
                       child: AutoSizeText(project.description,
                           style: Theme.of(context).textTheme.bodyText2)),
-                  Container(
+                  SizedBox(
                       height: 50,
                       child: ListView(
                         padding: const EdgeInsets.only(right: 12),

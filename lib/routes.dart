@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import './pages/home.dart';
-import './pages/stack.dart' as Pages;
+import './pages/stack.dart' as pages;
 
-typedef PathWidgetBuilder = Widget Function(BuildContext, String);
+typedef PathWidgetBuilder = Widget Function(BuildContext, String?);
 
 class Path {
   const Path(this.pattern, this.builder);
@@ -20,16 +20,19 @@ class RouteConfiguration {
     ),
   ];
 
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     for (final path in paths) {
       final regExpPattern = RegExp(path.pattern);
-      if (regExpPattern.hasMatch(settings.name)) {
-        final firstMatch = regExpPattern.firstMatch(settings.name);
-        final match = (firstMatch.groupCount == 1) ? firstMatch.group(1) : null;
-        return MaterialPageRoute<void>(
-          builder: (context) => path.builder(context, match),
-          settings: settings,
-        );
+      if (regExpPattern.hasMatch(settings.name!)) {
+        final firstMatch = regExpPattern.firstMatch(settings.name!);
+        if (firstMatch != null) {
+          final match =
+              (firstMatch.groupCount == 1) ? firstMatch.group(1) : null;
+          return MaterialPageRoute<void>(
+            builder: (context) => path.builder(context, match),
+            settings: settings,
+          );
+        }
       }
     }
 
@@ -41,20 +44,23 @@ class StackDrawerRouteConfiguration {
   static List<Path> paths = [
     Path(
       r'/',
-      (context, match) => const Pages.Stack(),
+      (context, match) => const pages.Stack(),
     ),
   ];
 
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     for (final path in paths) {
       final regExpPattern = RegExp(path.pattern);
-      if (regExpPattern.hasMatch(settings.name)) {
-        final firstMatch = regExpPattern.firstMatch(settings.name);
-        final match = (firstMatch.groupCount == 1) ? firstMatch.group(1) : null;
-        return MaterialPageRoute<void>(
-          builder: (context) => path.builder(context, match),
-          settings: settings,
-        );
+      if (regExpPattern.hasMatch(settings.name!)) {
+        final firstMatch = regExpPattern.firstMatch(settings.name!);
+        if (firstMatch != null) {
+          final match =
+              (firstMatch.groupCount == 1) ? firstMatch.group(1) : null;
+          return MaterialPageRoute<void>(
+            builder: (context) => path.builder(context, match),
+            settings: settings,
+          );
+        }
       }
     }
 

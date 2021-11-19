@@ -8,7 +8,7 @@ import '../widgets/stack_drawer.dart';
 import '../texts.dart';
 
 class About extends StatelessWidget {
-  About({Key key})
+  About({Key? key})
       : scaffoldKey = GlobalKey<ScaffoldState>(),
         super(key: key);
 
@@ -56,9 +56,9 @@ class About extends StatelessWidget {
       subtitle: subtitle,
       onTap: () {
         if (primary) {
-          scaffoldKey.currentState.openDrawer();
+          scaffoldKey.currentState!.openDrawer();
         } else {
-          scaffoldKey.currentState.openEndDrawer();
+          scaffoldKey.currentState!.openEndDrawer();
         }
       },
     );

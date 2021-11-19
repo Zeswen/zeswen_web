@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../technologies.dart';
 
 class Technologies extends StatelessWidget {
-  const Technologies(this.skill, {Key key}) : super(key: key);
+  const Technologies(this.skill, {Key? key}) : super(key: key);
 
   final Skill skill;
 
@@ -16,7 +16,7 @@ class Technologies extends StatelessWidget {
           children: [
             Row(children: [
               IconButton(
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },

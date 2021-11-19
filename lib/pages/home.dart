@@ -5,7 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import '../texts.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

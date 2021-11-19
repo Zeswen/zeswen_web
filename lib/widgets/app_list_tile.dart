@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class AppListTile extends StatelessWidget {
   const AppListTile(
-      {Key key, @required this.title, @required this.subtitle, this.onTap})
+      {Key? key, required this.title, required this.subtitle, this.onTap})
       : super(key: key);
 
   final String title;
   final String subtitle;
-  final void Function() onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
