@@ -26,9 +26,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: title,
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      theme: ThemeData.light().copyWith(
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.grey),
+        tabBarTheme: const TabBarTheme(labelColor: Colors.black54),
       ),
       darkTheme: ThemeData.dark(),
       home: const Root(),

@@ -13,5 +13,7 @@ class Images {
   static Image logo(BuildContext context) => Image.asset(
         _asset(context, 'logo.png'),
         fit: BoxFit.contain,
+        filterQuality: FilterQuality.high,
+        isAntiAlias: true,
       );
 }
