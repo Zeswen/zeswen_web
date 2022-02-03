@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../technologies.dart';
 
 class Technologies extends StatelessWidget {
-  const Technologies(this.skill, {Key? key}) : super(key: key);
+  const Technologies({Key? key, required this.skill}) : super(key: key);
 
   final Skill skill;
 
@@ -28,16 +28,17 @@ class Technologies extends StatelessWidget {
   }
 
   List<Widget> _technologies(context) {
-    final techs = technologies.where((tech) => tech.skill == skill).toList();
+    final techs =
+        Technology.technologies.where((tech) => tech.skill == skill).toList();
     return techs
-        .map((tech) => Card(
+        .map((technology) => Card(
                 child: ListTile(
               title: AutoSizeText(
-                tech.technology,
+                technology.name,
                 style: Theme.of(context).textTheme.bodyText1,
               ),
               subtitle: AutoSizeText(
-                tech.skillString,
+                technology.skill.name,
                 style: Theme.of(context).textTheme.bodyText2,
               ),
             )))

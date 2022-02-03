@@ -11,6 +11,8 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Center(
         child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -19,7 +21,7 @@ class Contact extends StatelessWidget {
               children: [
                 AutoSizeText(
                   Texts.contactTitle1,
-                  style: Theme.of(context).textTheme.headline2,
+                  style: textTheme.headline2,
                   textAlign: TextAlign.center,
                 ),
                 const Divider(),

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-import './pages/home.dart';
-import './pages/stack.dart' as pages;
+import './pages/pages.dart' show Home;
+import './pages/pages.dart' as pages show Stack;
 
 typedef PathWidgetBuilder = Widget Function(BuildContext, String?);
 
 class Path {
-  const Path(this.pattern, this.builder);
+  const Path({required this.pattern, required this.builder});
 
   final String pattern;
   final PathWidgetBuilder builder;
 }
 
-class RouteConfiguration {
+class MainRouteConfiguration {
   static List<Path> paths = [
     Path(
-      r'/',
-      (context, match) => const Home(),
+      pattern: r'/',
+      builder: (context, match) => const Home(),
     ),
   ];
 
@@ -41,12 +41,12 @@ class RouteConfiguration {
 }
 
 class StackDrawerRouteConfiguration {
-  static List<Path> paths = [
+  static Set<Path> paths = {
     Path(
-      r'/',
-      (context, match) => const pages.Stack(),
+      pattern: r'/',
+      builder: (context, match) => const pages.Stack(),
     ),
-  ];
+  };
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     for (final path in paths) {

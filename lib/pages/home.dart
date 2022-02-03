@@ -9,6 +9,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Center(
         child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -19,19 +21,19 @@ class Home extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                     child: AutoSizeText(
                       Texts.homeTitle1,
-                      style: Theme.of(context).textTheme.headline1,
+                      style: textTheme.headline1,
                       textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
                     )),
                 const Divider(),
                 AutoSizeText(
                   Texts.homeSubtitle1,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: textTheme.subtitle1,
                   textAlign: TextAlign.center,
                 ),
                 AutoSizeText(
                   Texts.homeSubtitle2,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: textTheme.subtitle1,
                   textAlign: TextAlign.center,
                 )
               ],

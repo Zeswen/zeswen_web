@@ -1,47 +1,50 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import './constants.dart';
-import './images.dart';
-import './pages/about.dart';
-import './pages/contact.dart';
-import './pages/home.dart';
-import './routes.dart';
+import 'constants.dart';
+import 'images.dart';
+import 'pages/pages.dart';
+import 'routes.dart' show MainRouteConfiguration;
+import 'texts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  final FirebaseAnalytics analytics = FirebaseAnalytics();
-  runApp(App(analytics: analytics));
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
-  const App({Key? key, required this.analytics}) : super(key: key);
-
-  final FirebaseAnalytics analytics;
-
+  const App({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: title,
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
+      ),
+      title: Constants.title,
       theme: ThemeData.light().copyWith(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.grey),
         tabBarTheme: const TabBarTheme(labelColor: Colors.black54),
       ),
       darkTheme: ThemeData.dark(),
-      home: const Root(),
+      home: const _Root(),
       navigatorObservers: [
-        FirebaseAnalyticsObserver(analytics: analytics),
+        FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
       ],
-      onGenerateRoute: RouteConfiguration.onGenerateRoute,
+      onGenerateRoute: MainRouteConfiguration.onGenerateRoute,
     );
   }
 }
 
-class Root extends StatelessWidget {
-  const Root({Key? key}) : super(key: key);
+class _Root extends StatelessWidget {
+  const _Root({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,15 +89,15 @@ class _TabBar extends StatelessWidget {
       tabs: [
         Tab(
           icon: Icon(Icons.menu_book),
-          text: 'About',
+          text: Texts.aboutTab,
         ),
         Tab(
           icon: Icon(Icons.home),
-          text: 'Home',
+          text: Texts.homeTab,
         ),
         Tab(
           icon: Icon(Icons.contact_mail),
-          text: 'Contact',
+          text: Texts.contactTab,
         ),
       ],
     );

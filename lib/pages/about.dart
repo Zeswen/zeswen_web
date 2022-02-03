@@ -1,11 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import 'package:auto_size_text/auto_size_text.dart';
-
-import '../widgets/app_list_tile.dart';
-import '../widgets/projects_drawer.dart';
-import '../widgets/stack_drawer.dart';
+import '../drawers/drawers.dart';
 import '../texts.dart';
+import '../widgets/app_list_tile.dart';
 
 class About extends StatelessWidget {
   About({Key? key})
@@ -16,6 +14,7 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
         key: scaffoldKey,
         drawer: const StackDrawer(),
@@ -28,7 +27,7 @@ class About extends StatelessWidget {
                   children: [
                     AutoSizeText(
                       Texts.aboutTitle1,
-                      style: Theme.of(context).textTheme.headline2,
+                      style: textTheme.headline2,
                       textAlign: TextAlign.center,
                     ),
                     const Divider(),

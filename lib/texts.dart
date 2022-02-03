@@ -1,6 +1,10 @@
 class Texts {
   const Texts._();
 
+  static const String aboutTab = 'About';
+  static const String homeTab = 'Home';
+  static const String contactTab = 'Contact';
+
   static const String homeTitle1 = 'Welcome to\nZeswen\'s temple.';
   static const String homeSubtitle1 =
       'I am a full-stack engineer working on multiple languages such as Dart, TypeScript and GraphQL.\n';
