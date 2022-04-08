@@ -15,8 +15,31 @@ class Project {
 
   static const projects = [
     Project._(
+      company: 'Namastay',
+      position: 'Head of Engineering | 2022 - Present',
+      description: 'Developing an incredible application with an amazing team!',
+      technologies: {
+        Technology.typeScript,
+        Technology.javaScript,
+        Technology.nextJs,
+        Technology.react,
+        Technology.reactNative,
+        Technology.redux,
+        Technology.nodeJs,
+        Technology.firebase,
+        Technology.seo,
+        Technology.html,
+        Technology.aws,
+        Technology.mongoDb,
+        Technology.postgreSql,
+        Technology.css,
+        Technology.rust,
+        Technology.git,
+      },
+    ),
+    Project._(
       company: 'WordList',
-      position: 'Head of Engineering | 2019 - Present',
+      position: 'Head of Engineering | 2019 - 2022',
       description:
           'An outstanding company where I am developing a revolutionary global dictionary and an innovative application to learn new languages in web, Android, iOS and multiple platforms. I started here as a Senior Full-stack Developer and made my way up to Head of Engineering in 2020.',
       technologies: {

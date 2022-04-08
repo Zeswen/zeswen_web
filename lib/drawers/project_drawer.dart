@@ -27,13 +27,13 @@ class ProjectsDrawer extends StatelessWidget {
             ),
           ),
           const Divider(),
-          ..._cards(context)
+          ..._buildCards(context)
         ],
       ),
     );
   }
 
-  List<Widget> _cards(BuildContext context) {
+  List<Widget> _buildCards(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
     return Project.projects
@@ -42,7 +42,10 @@ class ProjectsDrawer extends StatelessWidget {
                 children: [
                   ListTile(
                     leading: Image.asset(
-                        'assets/images/projects/${project.company.toLowerCase()}.png'),
+                      'assets/images/projects/${project.company.toLowerCase()}.png',
+                      filterQuality: FilterQuality.high,
+                      isAntiAlias: true,
+                    ),
                     title: AutoSizeText(
                       project.company,
                       style: textTheme.subtitle1,

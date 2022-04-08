@@ -7,9 +7,9 @@ class Texts {
 
   static const String homeTitle1 = 'Welcome to\nZeswen\'s temple.';
   static const String homeSubtitle1 =
-      'I am a full-stack engineer working on multiple languages such as Dart, TypeScript and GraphQL.\n';
+      'I am a Full-Stack and Flutter engineer working on multiple languages such as Dart, TypeScript and GraphQL.\n';
   static const String homeSubtitle2 =
-      'I am currently the head of engineering at WordList mainly focused on Flutter, Next.js, Node.js, MongoDB, PostgreSQL and DevOps.';
+      'I am currently the Head of Engineering at Namastay mainly focused on Next.js, React, React Native, Node.js, GraphQL, PostgreSQL and DevOps.';
 
   static const String contactTitle1 = 'Contact me.';
   static const String contactTileTitle1 = 'E-mail.';
